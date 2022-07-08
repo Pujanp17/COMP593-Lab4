@@ -14,7 +14,9 @@
             "variablePresentation": {
                 "all": "hide",
                 "protected":"inline"
-            }
+            },
+            "args": ["pokemon_name"]
+
         }
     ]
 }

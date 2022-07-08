@@ -1,6 +1,6 @@
 import requests
  
-def post_new_paste(title, body_text, expirations='N', listed=True)
+def post_new_paste(title, body_text, expirations='N', listed=True):
     """
     posts a new paste to PasteBin
 
@@ -25,19 +25,18 @@ def post_new_paste(title, body_text, expirations='N', listed=True)
 
 
     #Assigning parameter to search and response message
-        paste_url = 'https://pastebin.com/api/api_post.php',
-        response_msg = requests.post(paste_url, data=p)
+        paste_url = 'https://pastebin.com/api/api_post.php'
+        response_msg = requests.post(paste_url, data    =p)
 
     #defining the response message in poke_api dictionary.
         if response_msg.status_code == requests.codes.ok:
     #returning to the response message.
             print('success')
-            return response_msg.json()
+            return response_msg.text
         else:
             print('Error')
             Print(f'status code: {response_msg.status_code}, Reason of Error occurrence: {response_msg.reason} ')
-
-
-            #Creating pokeapi dictionary.
-            pokeapi_dictionary = search_pokeapi('pikachu')
             return None
+
+paste_url = post_new_paste('Test paste', 'test body', '1M')
+print(paste_url)
